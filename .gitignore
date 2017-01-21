@@ -3,6 +3,12 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
+# Zip files
+*.zip
+
+# Sandbox directory
+sandbox/
+
 # User-specific files
 *.suo
 *.user
