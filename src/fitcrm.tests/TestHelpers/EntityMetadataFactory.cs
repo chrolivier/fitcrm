@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Microsoft.Xrm.Sdk;
 using Microsoft.Xrm.Sdk.Metadata;
 
@@ -23,7 +24,37 @@ namespace fitcrm.tests.TestHelpers
                 }
             };
 
+            var t = metadata.GetType();
+            var p = t.GetProperty("Attributes");
+            p.SetValue(metadata, CreateAttributes());
+
             return metadata;
+        }
+
+        private static AttributeMetadata[] CreateAttributes()
+        {
+            var attrs = new List<AttributeMetadata>
+            {
+                CreateAttributeMetadata<StringAttributeMetadata>("stringattr", "String Attr"),
+                CreateAttributeMetadata<IntegerAttributeMetadata>("intattr", "Int Attr"),
+                CreateAttributeMetadata<DateTimeAttributeMetadata>("dateattr", "Date Attr")
+            };
+
+            return attrs.ToArray();
+        }
+
+        private static T CreateAttributeMetadata<T>(string logicalName, string displayLabel) where T : AttributeMetadata, new()
+        {
+            var label = new LocalizedLabel(displayLabel, 1033);
+            var attr = new T()
+            {
+                LogicalName = logicalName,
+                DisplayName = new Label(label, null)
+                {
+                    UserLocalizedLabel = label
+                }
+            };
+            return attr;
         }
     }
 }

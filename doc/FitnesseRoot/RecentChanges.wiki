@@ -1,3 +1,8 @@
+|TestSuite.SuiteSetUp||18:14:20 Sun, Feb 05, 2017|
+|TestSuite.SuiteSetup||17:35:47 Sun, Feb 05, 2017|
+|TestSuite.TestCreateRecord||17:24:19 Sun, Feb 05, 2017|
+|TestSuite||17:04:12 Sun, Feb 05, 2017|
+|||17:03:38 Sun, Feb 05, 2017|
 |FitCrmSuite||12:56:15 Sat, Jan 21, 2017|
 |FitCrmSuite.SuiteSetUp||12:54:31 Sat, Jan 21, 2017|
 |FitCrm||12:53:34 Sat, Jan 21, 2017|

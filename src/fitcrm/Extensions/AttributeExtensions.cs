@@ -11,7 +11,8 @@ namespace fitcrm.Extensions
     {
         public static string DisplayLabel(this AttributeMetadata attribute)
         {
-            return attribute.DisplayName.UserLocalizedLabel.Label;
+            if (attribute == null) throw new ArgumentNullException(nameof(attribute));
+            return attribute.DisplayName?.UserLocalizedLabel?.Label;
         }
     }
 }

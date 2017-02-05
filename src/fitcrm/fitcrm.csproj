@@ -103,8 +103,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Converters\ConverterFactory.cs" />
+    <Compile Include="Converters\BasicConverter.cs" />
+    <Compile Include="Converters\IValueConverter.cs" />
     <Compile Include="CreateRecord.cs" />
     <Compile Include="CrmTestContext.cs" />
+    <Compile Include="EntityAttributeMapper.cs" />
     <Compile Include="Exceptions\MetadataNotFoundException.cs" />
     <Compile Include="Extensions\AttributeExtensions.cs" />
     <Compile Include="Extensions\EntityMetadataExtensions.cs" />

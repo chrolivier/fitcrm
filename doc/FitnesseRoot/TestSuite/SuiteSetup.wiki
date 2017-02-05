@@ -1,0 +1,10 @@
+|import|
+|fitcrm|
+
+|script|Crm Test Context|
+|Connect To Crm|!-Url=https://crmlive/ChrisPOC;-!|
+
+|Load Entity Metadata|
+|Logical Name|Display Name?|
+|account|Account|
+|contact|Contact|

@@ -115,6 +115,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CreateRecordTests.cs" />
+    <Compile Include="EntityAttributeMapperTests.cs" />
     <Compile Include="LoadEntityMetadataTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\MetadataRepositoryTests.cs" />

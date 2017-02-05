@@ -22,15 +22,20 @@ namespace fitcrm
         private CrmServiceClient _svcClient;
         private IOrganizationService _organizationService;
 
+        public CrmTestContext()
+        {
+            _instance = this;
+        }
+
         public void ConnectToCrm(string connectionString)
         {
             _svcClient?.Dispose();
 
             _svcClient = new CrmServiceClient(connectionString);
-            _organizationService = _svcClient;
+            _organizationService = (IOrganizationService) _svcClient.OrganizationWebProxyClient ?? (IOrganizationService)_svcClient.OrganizationServiceProxy;
             var req = new WhoAmIRequest();
             // TODO: Log connect results and errors
-            _svcClient.Execute(req);
+            _organizationService.Execute(req);
         }
 
         protected void Dispose(bool disposing)

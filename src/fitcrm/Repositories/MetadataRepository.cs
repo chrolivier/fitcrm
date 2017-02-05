@@ -25,6 +25,7 @@ namespace fitcrm.Repositories
             var metadata = _items.FirstOrDefault(md => md.DisplayName.UserLocalizedLabel.Label == displayName);
             if (metadata == null)
                 throw new MetadataNotFoundException($"Entity metadata for entity with display name {displayName} was not found.");
+            return metadata;
         }
     }
 }
