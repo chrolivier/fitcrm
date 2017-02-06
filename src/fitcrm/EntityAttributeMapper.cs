@@ -23,14 +23,15 @@ namespace fitcrm
             _entity = entity;
         }
 
-        public void SetValue(string attributeDisplayName, string attributeValue)
+        public void SetValue(string attributeDescription, string attributeValue)
         {
             // Setting something to "--" doesn't set any value on CRM. Important for testing scenarios where a value should not be set instead of setting it to a blank field.
             if (attributeValue == "--") return;
 
-            var attrMetadata = GetAttributeMetadata(attributeDisplayName);
+            var attributeDescriptor = new AttributeDescriptor(attributeDescription);
+            var attrMetadata = GetAttributeMetadata(attributeDescriptor.DisplayName);
 
-            var converter = ConverterFactory.CreateConverter(attrMetadata);
+            var converter = ConverterFactory.CreateConverter(attrMetadata, attributeDescriptor);
             _entity[attrMetadata.LogicalName] = converter.ToCrm(attributeValue);
             
         }
@@ -45,14 +46,15 @@ namespace fitcrm
             return attrMetadata;
         }
 
-        public object GetValue(string attributeDisplayName)
+        public object GetValue(string attributeDescription)
         {
-            var attrMetadata = GetAttributeMetadata(attributeDisplayName);
+            var attributeDescriptor = new AttributeDescriptor(attributeDescription);
+            var attrMetadata = GetAttributeMetadata(attributeDescriptor.DisplayName);
             // Return "--" if no value was present for the attribute
             if (!_entity.Contains(attrMetadata.LogicalName))
                 return "--";
 
-            var converter = ConverterFactory.CreateConverter(attrMetadata);
+            var converter = ConverterFactory.CreateConverter(attrMetadata, attributeDescriptor);
             return converter.FromCrm(_entity[attrMetadata.LogicalName]);
         }
     }

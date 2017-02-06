@@ -103,7 +103,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AttributeDescriptor.cs" />
     <Compile Include="Converters\ConverterFactory.cs" />
+    <Compile Include="Converters\DateTimeConverter.cs" />
     <Compile Include="Converters\IntegerConverter.cs" />
     <Compile Include="Converters\StringConverter.cs" />
     <Compile Include="Converters\IValueConverter.cs" />

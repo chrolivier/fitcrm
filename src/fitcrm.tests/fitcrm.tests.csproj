@@ -115,6 +115,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AttributeDescriptorTests.cs" />
+    <Compile Include="Converters\DateTimeConverterTests.cs" />
     <Compile Include="CreateRecordTests.cs" />
     <Compile Include="EntityAttributeMapperTests.cs" />
     <Compile Include="LoadEntityMetadataTests.cs" />
