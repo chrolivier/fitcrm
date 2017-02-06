@@ -104,7 +104,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Converters\ConverterFactory.cs" />
-    <Compile Include="Converters\BasicConverter.cs" />
+    <Compile Include="Converters\IntegerConverter.cs" />
+    <Compile Include="Converters\StringConverter.cs" />
     <Compile Include="Converters\IValueConverter.cs" />
     <Compile Include="CreateRecord.cs" />
     <Compile Include="CrmTestContext.cs" />

@@ -14,9 +14,9 @@ namespace fitcrm.Converters
             if (attributeMetadata == null) throw new ArgumentNullException(nameof(attributeMetadata));
             switch (attributeMetadata.AttributeType)
             {
-                case AttributeTypeCode.String: 
-                case AttributeTypeCode.Integer:
-                        return new BasicConverter(attributeMetadata);
+                case AttributeTypeCode.String: return new StringConverter();
+                case AttributeTypeCode.Integer: return new IntegerConverter();
+                        
                 // TODO: Do proper exception handling
                 default: throw new ArgumentException();
             }

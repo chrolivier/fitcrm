@@ -8,23 +8,17 @@ using Microsoft.Xrm.Sdk.Metadata;
 
 namespace fitcrm.Converters
 {
-    class BasicConverter : IValueConverter
+    class StringConverter : IValueConverter
     {
-        private readonly StringAttributeMetadata _attributeMetadata;
-
-        public BasicConverter(AttributeMetadata attributeMetadata)
-        {
-            _attributeMetadata = (StringAttributeMetadata)attributeMetadata;
-        }
 
         public object ToCrm(string attributeValue)
         {
             return attributeValue;
         }
 
-        public object FromCrm(object entity)
+        public object FromCrm(object crmValue)
         {
-            return entity;
+            return crmValue;
         }
     }
 }

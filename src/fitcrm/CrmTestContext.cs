@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.ServiceModel.Description;
 using System.Text;
 using System.Threading.Tasks;
 using fitcrm.Repositories;
 using Microsoft.Crm.Sdk.Messages;
 using Microsoft.Xrm.Sdk;
+using Microsoft.Xrm.Sdk.Client;
 using Microsoft.Xrm.Tooling.Connector;
 
 namespace fitcrm
@@ -36,6 +38,15 @@ namespace fitcrm
             var req = new WhoAmIRequest();
             // TODO: Log connect results and errors
             _organizationService.Execute(req);
+        }
+
+        public void ConnectToServerWithUserDomainPassword(string uri, string username, string domain, string password)
+        {
+            var cred = new ClientCredentials();
+            cred.Windows.ClientCredential.Domain = domain;
+            cred.Windows.ClientCredential.UserName = username;
+            cred.Windows.ClientCredential.Password = password;
+            _organizationService = new OrganizationServiceProxy(new Uri(uri), null, cred, null);
         }
 
         protected void Dispose(bool disposing)
