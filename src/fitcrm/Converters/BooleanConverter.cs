@@ -12,8 +12,8 @@ namespace fitcrm.Converters
     public class BooleanConverter : IValueConverter
     {
         private readonly BooleanAttributeMetadata _attributeMetadata;
-        private OptionMetadata _trueOption;
-        private OptionMetadata _falseOption;
+        private readonly OptionMetadata _trueOption;
+        private readonly OptionMetadata _falseOption;
 
         public BooleanConverter(AttributeMetadata attributeMetadata)
         {
@@ -27,11 +27,9 @@ namespace fitcrm.Converters
         {
             if (attributeValue == _attributeMetadata.OptionSet.TrueOption.DisplayLabel())
                 return true;
-                //return new OptionSetValue(_trueOption.Value.Value);
 
             if (attributeValue == _attributeMetadata.OptionSet.FalseOption.DisplayLabel())
                 return false;
-                //return new OptionSetValue(_falseOption.Value.Value);
 
             throw new InvalidOperationException($"{attributeValue} is not a valid value.");
         }
