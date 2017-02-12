@@ -2,7 +2,13 @@
 |fitcrm|
 
 |script|Crm Test Context|
-|Connect To Crm|!-Url=https://crmlive/ChrisPOC;-!|
+|Connect To Crm|!-Url=http://10.0.0.22/POC1; Domain=crmlab.xyz; Username=administrator; Password=Ch3m1cal; Authtype=AD-!|
+#|Connect To Server|!-http://10.0.0.16/POC1/XrmServices/2011/Organization.svc-!|With User|administrator|Domain|crmlab|Password|Ch3m1cal|
+
+
+#|Connect To Crm|!-Url=http://169.254.210.187/POC1; Domain=crmlab.xyz; Username=administrator; Password=Ch3m1cal; Authtype=AD-!|
+
+#|Connect To Crm|!-Url=https://crmlive/ChrisPOC;-!|
 
 |Load Entity Metadata|
 |Logical Name|Display Name?|

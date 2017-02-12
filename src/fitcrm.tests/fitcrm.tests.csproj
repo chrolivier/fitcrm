@@ -116,6 +116,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AttributeDescriptorTests.cs" />
+    <Compile Include="Converters\BooleanConverterTests.cs" />
     <Compile Include="Converters\DateTimeConverterTests.cs" />
     <Compile Include="Converters\EnumConverterTests.cs" />
     <Compile Include="CreateRecordTests.cs" />

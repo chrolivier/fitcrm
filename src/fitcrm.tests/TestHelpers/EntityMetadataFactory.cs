@@ -39,10 +39,21 @@ namespace fitcrm.tests.TestHelpers
                 CreateAttributeMetadata<StringAttributeMetadata>("stringattr", "String Attr"),
                 CreateAttributeMetadata<IntegerAttributeMetadata>("intattr", "Int Attr"),
                 CreateAttributeMetadata<DateTimeAttributeMetadata>("dateattr", "Date Attr"),
-                CreatePicklistAttributeMetadata("picklistattr", "Picklist Attr")
+                CreatePicklistAttributeMetadata("picklistattr", "Picklist Attr"),
+                CreateBooleanAttributeMetadata("booleanattr", "Boolean Attr")
             };
 
             return attrs.ToArray();
+        }
+
+        private static BooleanAttributeMetadata CreateBooleanAttributeMetadata(string logicalName, string displayLabel)
+        {
+            var attr = CreateAttributeMetadata<BooleanAttributeMetadata>(logicalName, displayLabel);
+            attr.OptionSet = new BooleanOptionSetMetadata(
+                new OptionMetadata(LabelMaker.MakeLabel("Yes"), 1),
+                new OptionMetadata(LabelMaker.MakeLabel("No"), 2)
+            );
+            return attr;
         }
 
         private static T CreateAttributeMetadata<T>(string logicalName, string displayLabel) where T : AttributeMetadata, new()

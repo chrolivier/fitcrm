@@ -17,8 +17,8 @@ namespace fitcrm.Converters
                 case AttributeTypeCode.String: return new StringConverter();
                 case AttributeTypeCode.Integer: return new IntegerConverter();
                 case AttributeTypeCode.DateTime: return new DateTimeConverter(attributeDescriptor);
-                case AttributeTypeCode.Picklist:
-                case AttributeTypeCode.Boolean: return new EnumConverter(attributeMetadata);
+                case AttributeTypeCode.Picklist: return new EnumConverter(attributeMetadata);
+                case AttributeTypeCode.Boolean: return new BooleanConverter(attributeMetadata);
                         
                 // TODO: Do proper exception handling
                 default: throw new ArgumentException();
