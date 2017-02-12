@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Microsoft.Xrm.Sdk;
 using Microsoft.Xrm.Sdk.Metadata;
+using fitcrm.Utils;
 
 namespace fitcrm.tests.TestHelpers
 {
@@ -37,7 +38,8 @@ namespace fitcrm.tests.TestHelpers
             {
                 CreateAttributeMetadata<StringAttributeMetadata>("stringattr", "String Attr"),
                 CreateAttributeMetadata<IntegerAttributeMetadata>("intattr", "Int Attr"),
-                CreateAttributeMetadata<DateTimeAttributeMetadata>("dateattr", "Date Attr")
+                CreateAttributeMetadata<DateTimeAttributeMetadata>("dateattr", "Date Attr"),
+                CreatePicklistAttributeMetadata("picklistattr", "Picklist Attr")
             };
 
             return attrs.ToArray();
@@ -45,15 +47,25 @@ namespace fitcrm.tests.TestHelpers
 
         private static T CreateAttributeMetadata<T>(string logicalName, string displayLabel) where T : AttributeMetadata, new()
         {
-            var label = new LocalizedLabel(displayLabel, 1033);
             var attr = new T()
             {
                 LogicalName = logicalName,
-                DisplayName = new Label(label, null)
-                {
-                    UserLocalizedLabel = label
-                }
+                DisplayName = LabelMaker.MakeLabel(displayLabel)
             };
+            return attr;
+        }
+
+        static PicklistAttributeMetadata CreatePicklistAttributeMetadata(string logicalName, string displayName)
+        {
+            var attr = CreateAttributeMetadata<PicklistAttributeMetadata>(logicalName, displayName);
+            var items = new OptionMetadataCollection
+            {
+                new OptionMetadata(LabelMaker.MakeLabel("Option1"), 1),
+                new OptionMetadata(LabelMaker.MakeLabel("Option2"), 2),
+                new OptionMetadata(LabelMaker.MakeLabel("Option3"), 3)
+            };
+            attr.OptionSet = new OptionSetMetadata(items);
+
             return attr;
         }
     }

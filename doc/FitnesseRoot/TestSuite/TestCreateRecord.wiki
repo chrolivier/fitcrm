@@ -1,3 +1,17 @@
 |ddt: Create Record|Contact|
 |First Name|Last Name|Age|Birthday:yyyy MMM dd|Full Name?|Age?|Birthday:yyyy/MM/dd?|
 |Joe|Soap|40|1975 Jan 10|Joe Soap|40|1975/01/10|
+
+Option set fields can be set using their labels
+|ddt: Create Record|Account|
+|Account Name|Ownership|Ownership?|
+|Acme|Public|Public|
+|Widgets R Us|Private|Private|
+|KFC|Other|Other|
+
+
+Boolean fields can be set using their labels
+|ddt: Create Record|Account|
+|Account Name|Credit Hold|Credit Hold?|
+|Foo|Yes|Yes|
+|Bar|No|No|
