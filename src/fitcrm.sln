@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "fitcrm", "fitcrm.csproj", "{F508BAFF-2E80-4244-B247-692303F1D890}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "fitcrm", "fitcrm\fitcrm.csproj", "{F508BAFF-2E80-4244-B247-692303F1D890}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "fitcrm.tests", "..\fitcrm.tests\fitcrm.tests.csproj", "{FEC0D266-4266-468A-B9DB-8B4DCD8EC5F1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "fitcrm.tests", "fitcrm.tests\fitcrm.tests.csproj", "{FEC0D266-4266-468A-B9DB-8B4DCD8EC5F1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
