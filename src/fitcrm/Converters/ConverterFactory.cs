@@ -22,6 +22,7 @@ namespace fitcrm.Converters
                 case AttributeTypeCode.Status:
                     return new EnumConverter(attributeMetadata);
                 case AttributeTypeCode.Boolean: return new BooleanConverter(attributeMetadata);
+                case AttributeTypeCode.Money: return new MoneyConverter(attributeDescriptor);
                         
                 // TODO: Do proper exception handling
                 default: throw new ArgumentException();

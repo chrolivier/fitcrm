@@ -1,0 +1,5 @@
+Boolean fields can be set and retrieved using their labels
+|ddt: Create Record|Account|
+|Account Name|Credit Hold|Credit Hold?|
+|Foo|Yes|Yes|
+|Bar|No|No|

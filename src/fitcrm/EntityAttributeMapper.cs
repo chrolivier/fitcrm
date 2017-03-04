@@ -55,7 +55,9 @@ namespace fitcrm
                 return "--";
 
             var converter = ConverterFactory.CreateConverter(attrMetadata, attributeDescriptor);
-            return converter.FromCrm(_entity[attrMetadata.LogicalName]);
+            var value = converter.FromCrm(_entity[attrMetadata.LogicalName]);
+
+            return value;
         }
     }
 }

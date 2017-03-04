@@ -34,15 +34,12 @@ namespace fitcrm.Converters
 
         public object FromCrm(object crmValue)
         {
-            var result = ((DateTime)crmValue).ToLocalTime();
-            if (_descriptor.Format == null)
-            {
-                return result;
-            }
-            else
-            {
-                return result.ToString(_descriptor.Format);
-            }
+            var dateValue = ((DateTime) crmValue).ToLocalTime();
+
+            if (_descriptor.Format != null)
+                return dateValue.ToString(_descriptor.Format);
+
+            return dateValue;
         }
     }
 }

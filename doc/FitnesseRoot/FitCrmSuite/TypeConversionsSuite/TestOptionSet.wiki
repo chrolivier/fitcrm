@@ -1,0 +1,6 @@
+Option set fields can be set and retrieved using their labels
+|ddt: Create Record|Account|
+|Account Name|Ownership|Ownership?|
+|Acme|Public|Public|
+|Widgets R Us|Private|Private|
+|KFC|Other|Other|

@@ -1,0 +1,5 @@
+Date and Time fields can be set and read
+|ddt: Create Record|Account|
+|Account Name|Last On Hold Time|Last On Hold Time?|
+|Acme|2017/02/22 3:35:22 PM|2017/02/22 3:35:22 PM|
+|Foo|2017/02/22 3:35:22 AM|2017/02/22 3:35:22 AM|

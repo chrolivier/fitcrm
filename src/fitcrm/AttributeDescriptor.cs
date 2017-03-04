@@ -13,13 +13,22 @@ namespace fitcrm
         {
             DisplayName = input;
 
-            var regex = new Regex(@"(?<attr>[^\.\:]*)(\.(?<member>[^\:]*))?(\:(?<format>.*))?");
+            var regex = new Regex(@"(?<attr>[^\#\{]*)(\#(?<member>[^\{]*))?(\{(?<format>.*)\})?");
             var match = regex.Match(input);
             DisplayName = match.Groups["attr"].Value;
             var member = match.Groups["member"].Value;
             Member = !string.IsNullOrWhiteSpace(member)? member : null;
             var format = match.Groups["format"].Value;
             Format = !string.IsNullOrWhiteSpace(format) ? format : null;
+        }
+
+        public AttributeDescriptor(string displayName, string member, string format)
+        {
+            if (string.IsNullOrWhiteSpace(displayName))
+                throw new ArgumentException("Value cannot be null or whitespace.", nameof(displayName));
+            DisplayName = displayName;
+            Member = member;
+            Format = format;
         }
 
         public string DisplayName { get; private set; }

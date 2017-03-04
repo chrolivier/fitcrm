@@ -24,9 +24,9 @@ namespace fitcrm.tests
         }
 
         [Test]
-        [TestCase("Name.Start", "Name", "Start", null)]
-        [TestCase("Full Name.Foo", "Full Name", "Foo", null)]
-        [TestCase("One two three.four", "One two three", "four", null)]
+        [TestCase("Name#Start", "Name", "Start", null)]
+        [TestCase("Full Name#Foo", "Full Name", "Foo", null)]
+        [TestCase("One two three#four", "One two three", "four", null)]
         public void Ctor_MemberSpecified_IsParsedCorrectly(string input, string displayName, string member, string format)
         {
             var sut = new AttributeDescriptor(input);
@@ -36,9 +36,9 @@ namespace fitcrm.tests
         }
 
         [Test]
-        [TestCase("Name.Start:xxx", "Name", "Start", "xxx")]
-        [TestCase("Full Name.Foo:xxx", "Full Name", "Foo", "xxx")]
-        [TestCase("One two three.four:xxx", "One two three", "four", "xxx")]
+        [TestCase("Name#Start{xxx}", "Name", "Start", "xxx")]
+        [TestCase("Full Name#Foo{xxx}", "Full Name", "Foo", "xxx")]
+        [TestCase("One two three#four{xxx}", "One two three", "four", "xxx")]
         public void Ctor_MemberAndFormatSpecified_IsParsedCorrectly(string input, string displayName, string member, string format)
         {
             var sut = new AttributeDescriptor(input);
@@ -48,9 +48,9 @@ namespace fitcrm.tests
         }
 
         [Test]
-        [TestCase("Name:xxx", "Name", null, "xxx")]
-        [TestCase("Full Name:xxx", "Full Name", null, "xxx")]
-        [TestCase("One two three:xxx", "One two three", null, "xxx")]
+        [TestCase("Name{xxx}", "Name", null, "xxx")]
+        [TestCase("Full Name{xxx}", "Full Name", null, "xxx")]
+        [TestCase("One two three{xxx}", "One two three", null, "xxx")]
         public void Ctor_AttributeFormatSpecified_IsParsedCorrectly(string input, string displayName, string member, string format)
         {
             var sut = new AttributeDescriptor(input);

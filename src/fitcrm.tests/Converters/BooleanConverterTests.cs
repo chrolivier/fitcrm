@@ -23,11 +23,11 @@ namespace fitcrm.tests.Converters
         }
 
         [Test]
-        [TestCase("Yes", 1)]
-        [TestCase("No", 2)]
-        public void ToCrm_ValidLabel_ReturnCorrectValue(string text, int expectedValue)
+        [TestCase("Yes", true)]
+        [TestCase("No", false)]
+        public void ToCrm_ValidLabel_ReturnCorrectValue(string text, bool expectedValue)
         {
-            Assert.That(_sut.ToCrm(text), Is.EqualTo(new OptionSetValue(expectedValue)));
+            Assert.That(_sut.ToCrm(text), Is.EqualTo(expectedValue));
         }
 
         [Test]
@@ -37,11 +37,11 @@ namespace fitcrm.tests.Converters
         }
 
         [Test]
-        [TestCase(1, "Yes")]
-        [TestCase(2, "No")]
-        public void FromCrm_Always_ReturnsOptionsLabel(int value, string expectedValue)
+        [TestCase(true, "Yes")]
+        [TestCase(false, "No")]
+        public void FromCrm_Always_ReturnsOptionsLabel(bool value, string expectedValue)
         {
-            Assert.That(_sut.FromCrm(new OptionSetValue(value)), Is.EqualTo(expectedValue));
+            Assert.That(_sut.FromCrm(value), Is.EqualTo(expectedValue));
 
         }
 

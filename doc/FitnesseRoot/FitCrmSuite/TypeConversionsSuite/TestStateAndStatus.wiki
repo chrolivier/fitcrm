@@ -1,0 +1,4 @@
+State and status reason can be set and retrieved using their labels
+|ddt: Create Record|Account|
+|Account Name|Status|Status Reason|Status?|Status Reason?|
+|Foo|Active|Active|Active|Active|

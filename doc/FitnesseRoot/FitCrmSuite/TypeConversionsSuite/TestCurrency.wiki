@@ -1,0 +1,4 @@
+Currency fields can be set and retrieved
+|ddt: Create Record|Account|
+|Account Name|Credit Limit|Credit Limit?|
+|Acme|10000.00|10000.0000|

@@ -1,7 +1,1 @@
-!define TEST_SYSTEM {slim}
-!path C:\dev\fitcrm\src\fitcrm\bin\Debug\fitcrm.dll
-!define COMMAND_PATTERN {%m -r fitSharp.Slim.Service.Runner %p}
-!define TEST_RUNNER {.\fitSharp\Runner.exe}
-
-
 !contents -R2 -g -p -f -h

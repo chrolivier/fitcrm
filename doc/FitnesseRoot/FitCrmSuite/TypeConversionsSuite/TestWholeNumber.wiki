@@ -1,0 +1,4 @@
+Whole Number fields can be set and retrieved
+|ddt: Create Record|Account|
+|Account Name|No. of Employees|No. of Employees?|
+|Acme|2400|2400|
