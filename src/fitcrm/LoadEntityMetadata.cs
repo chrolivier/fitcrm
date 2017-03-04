@@ -20,16 +20,8 @@ namespace fitcrm
 
         public void Execute()
         {
-            var req = new RetrieveEntityRequest
-            {
-                LogicalName = LogicalName,
-                EntityFilters = EntityFilters.Attributes
-            };
-
-            var res = (RetrieveEntityResponse)OrganizationService.Execute(req);
-
-            DisplayName = res.EntityMetadata.DisplayLabel();
-            CrmTestContext.Instance.MetadataRepository.AddEntityMetadata(res.EntityMetadata);
+            var metadata = CrmTestContext.Instance.MetadataRepository.GetByLogicalName(LogicalName);
+            DisplayName = metadata.DisplayLabel();
         }
     }
 }

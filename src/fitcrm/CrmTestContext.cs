@@ -23,6 +23,7 @@ namespace fitcrm
 
         private CrmServiceClient _svcClient;
         private IOrganizationService _organizationService;
+        private MetadataRepository _metadataRepository;
 
         public CrmTestContext()
         {
@@ -38,8 +39,11 @@ namespace fitcrm
             var req = new WhoAmIRequest();
             // TODO: Log connect results and errors
             _organizationService.Execute(req);
+
+            _metadataRepository = new MetadataRepository(_svcClient);
         }
 
+/*
         public void ConnectToServerWithUserDomainPassword(string uri, string username, string domain, string password)
         {
             var cred = new ClientCredentials();
@@ -48,6 +52,7 @@ namespace fitcrm
             cred.Windows.ClientCredential.Password = password;
             _organizationService = new OrganizationServiceProxy(new Uri(uri), null, cred, null);
         }
+*/
 
         protected void Dispose(bool disposing)
         {
@@ -65,9 +70,23 @@ namespace fitcrm
         public IOrganizationService OrganizationService
         {
             get { return _organizationService; }
-            set { _organizationService = value; }
+            set
+            {
+                _organizationService = value;
+                _metadataRepository = new MetadataRepository(_organizationService);
+            }
         }
 
-        public MetadataRepository MetadataRepository { get; } = new MetadataRepository();
+        public MetadataRepository MetadataRepository
+        {
+            get
+            {
+                if (_metadataRepository == null)
+                {
+                    throw new InvalidOperationException("CRM connection has not been estalished");
+                }
+                return _metadataRepository;
+            }
+        }
     }
 }
