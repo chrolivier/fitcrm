@@ -1,13 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using fitcrm.Exceptions;
+﻿using fitcrm.Exceptions;
 using fitcrm.Repositories;
 using fitcrm.tests.TestHelpers;
-using Microsoft.Xrm.Sdk;
-using Microsoft.Xrm.Sdk.Metadata;
 using NUnit.Framework;
 
 namespace fitcrm.tests.Repositories

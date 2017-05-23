@@ -1,0 +1,19 @@
+!*******> Suite Set Up
+|import|
+|fitcrm|
+
+|script|Crm Test Context|
+|Connect To Crm|!-Url=https://crm2016-lab.crmlab.xyz/VanillaOrg; Domain=crmlab.xyz; Username=administrator; Password=p@ssw0rd2; Authtype=AD-!|
+#|Connect To Server|!-http://10.0.0.16/POC1/XrmServices/2011/Organization.svc-!|With User|administrator|Domain|crmlab|Password|Ch3m1cal|
+
+
+#|Connect To Crm|!-Url=http://169.254.210.187/POC1; Domain=crmlab.xyz; Username=administrator; Password=Ch3m1cal; Authtype=AD-!|
+
+#|Connect To Crm|!-Url=https://crmlive/ChrisPOC;-!|
+
+|Load Entity Metadata|
+|Logical Name|Display Name?|
+|account|Account|
+|contact|Contact|
+
+*******!

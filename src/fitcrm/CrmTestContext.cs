@@ -1,13 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.ServiceModel.Description;
-using System.Text;
-using System.Threading.Tasks;
 using fitcrm.Repositories;
 using Microsoft.Crm.Sdk.Messages;
 using Microsoft.Xrm.Sdk;
-using Microsoft.Xrm.Sdk.Client;
 using Microsoft.Xrm.Tooling.Connector;
 
 namespace fitcrm
@@ -17,8 +11,8 @@ namespace fitcrm
         private static CrmTestContext _instance;
         public static CrmTestContext Instance
         {
-            get { return _instance ?? (_instance = new CrmTestContext()); }
-            set { _instance = value; }
+            get => _instance ?? (_instance = new CrmTestContext());
+            set => _instance = value;
         }
 
         private CrmServiceClient _svcClient;
@@ -69,7 +63,7 @@ namespace fitcrm
 
         public IOrganizationService OrganizationService
         {
-            get { return _organizationService; }
+            get => _organizationService;
             set
             {
                 _organizationService = value;

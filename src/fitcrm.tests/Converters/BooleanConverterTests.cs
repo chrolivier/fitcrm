@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using fitcrm.Converters;
 using fitcrm.Extensions;
 using fitcrm.tests.TestHelpers;
-using Microsoft.Xrm.Sdk;
 using NUnit.Framework;
 
 namespace fitcrm.tests.Converters

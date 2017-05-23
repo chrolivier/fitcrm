@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using fitcrm.Converters;
 using fitcrm.Extensions;
 using Microsoft.Xrm.Sdk;
@@ -17,10 +14,8 @@ namespace fitcrm
 
         public EntityAttributeMapper(EntityMetadata entityMetadata, Entity entity)
         {
-            if (entityMetadata == null) throw new ArgumentNullException(nameof(entityMetadata));
-            if (entity == null) throw new ArgumentNullException(nameof(entity));
-            _entityMetadata = entityMetadata;
-            _entity = entity;
+            _entityMetadata = entityMetadata ?? throw new ArgumentNullException(nameof(entityMetadata));
+            _entity = entity ?? throw new ArgumentNullException(nameof(entity));
         }
 
         public void SetValue(string attributeDescription, string attributeValue)
